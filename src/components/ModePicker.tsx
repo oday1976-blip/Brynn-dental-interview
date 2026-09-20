@@ -33,7 +33,7 @@ export function ModePicker({ onSelect, onOpenSettings }: Props) {
     <div className="mode-picker">
       <header className="hero">
         <p className="eyebrow">Dental school admissions practice</p>
-        <h1>Mock interview for Brynn O’Day</h1>
+        <h1>Dental school mock interview</h1>
         <p className="lede">
           Voice-only practice with a warm, professional interviewer. Tap the mic to answer —
           no typing required. Feedback lands at the end.

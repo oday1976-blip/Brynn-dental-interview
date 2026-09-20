@@ -132,7 +132,7 @@ export function generateHeuristicFeedback(
   }
   if (specificCount < Math.ceil(answerCount * 0.4)) {
     improveAreas.push(
-      'Add more specifics: names of settings (clinic, lab, dance), what you did, and what changed for the patient or team.'
+      'Add more specifics: names of settings (clinic, lab, job, team), what you did, and what changed for the patient or team.'
     );
   }
   if (longAnswers >= 2) {
@@ -160,7 +160,7 @@ export function generateHeuristicFeedback(
   let contentVsStoryBank: string;
   if (storiesHit.length === 0) {
     contentVsStoryBank =
-      'This session did not clearly surface prepared themes from your story bank (shadowing, Irish dance, free clinic, ethics quiz, lab teamwork, etc.). That is fine for a first pass — next time, consciously map questions to those stories. Do not invent new experiences; use what you have already lived.';
+      'This session did not clearly surface prepared themes (shadowing, service, teamwork, ethics, leadership, etc.). That is fine for a first pass — next time, consciously map questions to real experiences you already have. Do not invent new experiences.';
   } else {
     contentVsStoryBank = `Detected story-bank themes in your answers: ${storiesHit.join('; ')}.`;
     if (missed.length > 0) {
@@ -179,7 +179,7 @@ export function generateHeuristicFeedback(
 
   // Practice tips (3–5)
   practiceTips.push('Rehearse your “why dentistry” and one shadowing story until both fit in ~90 seconds.');
-  practiceTips.push('Drill one behavioral STAR story (ethics quiz, restaurant conflict, or lab teamwork) until the action steps are crisp.');
+  practiceTips.push('Drill one behavioral STAR story (conflict, teamwork, or a time you failed) until the action steps are crisp.');
   practiceTips.push('Record a Quick mode session weekly and compare average answer length and specificity.');
   if (mode !== 'behavioral') {
     practiceTips.push('Do a Behavioral-only mode next to stress-test conflict, teamwork, and failure questions.');

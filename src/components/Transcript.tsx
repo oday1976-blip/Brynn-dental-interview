@@ -24,13 +24,13 @@ export function Transcript({ turns, interim }: Props) {
         <ol className="transcript-list">
           {turns.map((t, i) => (
             <li key={i} className={`turn turn-${t.role}`}>
-              <span className="who">{t.role === 'interviewer' ? 'Interviewer' : 'Brynn'}</span>
+              <span className="who">{t.role === 'interviewer' ? 'Interviewer' : 'You'}</span>
               <p>{t.text}</p>
             </li>
           ))}
           {interim ? (
             <li className="turn turn-brynn interim">
-              <span className="who">Brynn (live)</span>
+              <span className="who">You (live)</span>
               <p>{interim}</p>
             </li>
           ) : null}

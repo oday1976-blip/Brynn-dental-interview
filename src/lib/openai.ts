@@ -81,7 +81,7 @@ export async function generateAiFollowUp(
       role: 'system',
       content: `${INTERVIEWER_PERSONA}
 
-CONTEXT (facts only — never invent beyond this or what Brynn just said):
+CONTEXT (facts only — never invent beyond this or what the applicant just said):
 ${BRYNN_CONTEXT_MARKDOWN}
 
 If a follow-up is useful, reply with ONLY the follow-up question (one or two sentences).
@@ -93,7 +93,7 @@ If no follow-up is needed, reply with exactly: NONE`,
 ${recent}
 
 Current question: ${question}
-Brynn's answer: ${answer}
+Applicant's answer: ${answer}
 
 Follow-up or NONE:`,
     },
@@ -118,7 +118,7 @@ export async function generateAiFeedback(
     [
       {
         role: 'system',
-        content: `You are a supportive dental admissions coach giving written feedback to Brynn O'Day after a mock interview.
+        content: `You are a supportive dental admissions coach giving written feedback after a dental school mock interview.
 Use ONLY the transcript and this context — never invent experiences she did not mention:
 ${BRYNN_CONTEXT_MARKDOWN}
 
