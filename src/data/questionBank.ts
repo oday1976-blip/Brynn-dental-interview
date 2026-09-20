@@ -218,6 +218,196 @@ export const QUESTION_BANK: BankQuestion[] = [
     modes: ['full', 'motivation'],
     followUpTemplates: [],
   },
+  {
+    id: 'tell-us-about-yourself',
+    text: "Thank you for being here. To begin, could you tell us a little about yourself — the path that brought you to this interview today?",
+    category: 'motivation',
+    modes: ['full', 'quick', 'motivation'],
+    storyHints: ['why-dentistry', 'leadership', 'service'],
+    followUpTemplates: [
+      "What part of that journey feels most important for a dental school to understand?",
+    ],
+  },
+  {
+    id: 'why-vcu',
+    text: "Why VCU School of Dentistry in particular? What about our community, curriculum, or clinical training draws you here?",
+    category: 'school',
+    modes: ['full', 'motivation'],
+    storyHints: ['school-fit'],
+    followUpTemplates: [
+      "Is there a specific aspect of VCU — service, research, clinical exposure, or culture — that feels like the strongest fit for you?",
+    ],
+  },
+  {
+    id: 'why-not-medicine',
+    text: "Some applicants consider medicine as well as dentistry. What led you toward dentistry rather than medicine or another health profession?",
+    category: 'motivation',
+    modes: ['full', 'motivation'],
+    storyHints: ['why-dentistry', 'shadowing'],
+    followUpTemplates: [
+      "Was there a moment in shadowing or patient care that made that distinction feel clear?",
+    ],
+  },
+  {
+    id: 'five-qualities',
+    text: "In your view, what are five qualities of a good dentist — and which of those do you already practice today?",
+    category: 'motivation',
+    modes: ['full', 'motivation'],
+    storyHints: ['communication', 'ethics', 'why-dentistry'],
+    followUpTemplates: [
+      "Can you share a concrete example of one of those qualities showing up in your own experience?",
+    ],
+  },
+  {
+    id: 'biggest-strength',
+    text: "What do you see as your biggest strength, and how would it help you succeed as a dental student and clinician?",
+    category: 'motivation',
+    modes: ['full', 'quick', 'motivation'],
+    storyHints: ['leadership', 'communication', 'challenge'],
+    followUpTemplates: [
+      "Tell me about a time that strength was tested.",
+    ],
+  },
+  {
+    id: 'biggest-weakness',
+    text: "What would you say is your biggest weakness or area for growth, and how are you working on it?",
+    category: 'behavioral',
+    modes: ['full', 'behavioral'],
+    storyHints: ['challenge'],
+    followUpTemplates: [
+      "How will you continue that growth once dental school becomes especially demanding?",
+    ],
+  },
+  {
+    id: 'stand-out',
+    text: "Dental school applicants are often highly accomplished. What makes you stand out from other applicants?",
+    category: 'motivation',
+    modes: ['full', 'motivation'],
+    storyHints: ['leadership', 'service', 'why-dentistry'],
+    followUpTemplates: [
+      "How would that distinctive quality show up day to day in clinic or with classmates?",
+    ],
+  },
+  {
+    id: 'ten-years',
+    text: "Where do you see yourself in ten years — as a clinician, a colleague, and a member of your community?",
+    category: 'motivation',
+    modes: ['full', 'motivation'],
+    storyHints: ['why-dentistry', 'service', 'school-fit'],
+    followUpTemplates: [
+      "How does dental school fit into that longer arc?",
+    ],
+  },
+  {
+    id: 'plan-to-specialize',
+    text: "Do you plan to specialize after dental school, or are you more drawn to general practice right now — and why?",
+    category: 'motivation',
+    modes: ['full', 'motivation'],
+    storyHints: ['why-dentistry', 'shadowing'],
+    followUpTemplates: [
+      "What experiences so far have shaped that preference?",
+    ],
+  },
+  {
+    id: 'where-else-applied',
+    text: "Where else have you applied, and how are you thinking about where VCU fits among your choices?",
+    category: 'school',
+    modes: ['full', 'motivation'],
+    storyHints: ['school-fit'],
+    followUpTemplates: [
+      "What would make VCU feel like the right place for you if you had multiple options?",
+    ],
+  },
+  {
+    id: 'classmate-cheating',
+    text: "What would you do if you discovered a fellow student was cheating on an exam or clinical requirement?",
+    category: 'mmi',
+    modes: ['full', 'behavioral'],
+    storyHints: ['ethics'],
+    followUpTemplates: [
+      "How would you balance loyalty to a peer with responsibility to patients and the profession?",
+    ],
+  },
+  {
+    id: 'why-biology',
+    text: "What led you to major in biology, and how has that coursework prepared you for dentistry?",
+    category: 'motivation',
+    modes: ['full', 'motivation'],
+    storyHints: ['why-dentistry', 'challenge'],
+    followUpTemplates: [
+      "Was there a particular course or lab experience that connected science to patient care for you?",
+    ],
+  },
+  {
+    id: 'biggest-challenge-dentistry',
+    text: "What do you see as the biggest challenge facing dentistry today, and how do you hope to contribute as a future dentist?",
+    category: 'motivation',
+    modes: ['full', 'motivation'],
+    storyHints: ['service', 'why-dentistry'],
+    followUpTemplates: [
+      "How have your experiences so far shaped that view of the profession's challenges?",
+    ],
+  },
+  {
+    id: 'team-problem-solve',
+    text: "Tell me about a time you had to work as a team to solve a problem. What was your role, and what was the outcome?",
+    category: 'behavioral',
+    modes: ['full', 'quick', 'behavioral'],
+    storyHints: ['teamwork', 'leadership'],
+    followUpTemplates: [
+      "What did you personally do when the group got stuck?",
+    ],
+  },
+  {
+    id: 'handle-stress',
+    text: "Dental school and clinical practice can be stressful. How do you handle stress, and what helps you stay effective under pressure?",
+    category: 'behavioral',
+    modes: ['full', 'behavioral'],
+    storyHints: ['challenge'],
+    followUpTemplates: [
+      "Can you share a specific high-pressure situation and how you got through it?",
+    ],
+  },
+  {
+    id: 'manual-dexterity',
+    text: "How have you practiced or developed manual dexterity in ways that prepare you for dentistry?",
+    category: 'clinical',
+    modes: ['full', 'motivation'],
+    storyHints: ['why-dentistry'],
+    followUpTemplates: [
+      "How do those activities translate to the fine motor skill and patience clinical dentistry asks for?",
+    ],
+  },
+  {
+    id: 'ethical-dilemma',
+    text: "Talk about a time you faced an ethical dilemma. What was at stake, and how did you decide what to do?",
+    category: 'behavioral',
+    modes: ['full', 'behavioral'],
+    storyHints: ['ethics'],
+    followUpTemplates: [
+      "Looking back, what did that experience teach you about integrity in healthcare?",
+    ],
+  },
+  {
+    id: 'deal-with-conflict',
+    text: "Talk about a time you had to deal with conflict — with a peer, supervisor, or teammate. How did you handle it?",
+    category: 'behavioral',
+    modes: ['full', 'quick', 'behavioral'],
+    storyHints: ['teamwork', 'communication'],
+    followUpTemplates: [
+      "What would you do differently if a similar conflict arose in clinic?",
+    ],
+  },
+  {
+    id: 'dat-retake-improvement',
+    text: "If you retook the DAT, what did you change the second time to improve your score — and what did that process teach you?",
+    category: 'behavioral',
+    modes: ['full', 'behavioral'],
+    storyHints: ['challenge'],
+    followUpTemplates: [
+      "How might that approach to feedback and improvement show up in dental school?",
+    ],
+  },
 ];
 
 const MODE_TARGETS: Record<InterviewMode, { min: number; max: number }> = {

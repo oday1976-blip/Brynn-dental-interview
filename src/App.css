@@ -419,3 +419,89 @@
   gap: 0.6rem;
   margin-top: 0.5rem;
 }
+
+
+/* --- Interview layout tighten --- */
+.interview-top {
+  margin-bottom: 0.65rem;
+}
+
+.status-pill {
+  margin-bottom: 0.75rem;
+}
+
+.mic-wrap {
+  margin: 0.85rem 0 0.5rem;
+}
+
+.mic-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.5rem;
+}
+
+.mic-btn.waiting,
+.mic-btn:disabled.waiting {
+  opacity: 0.38;
+  filter: grayscale(0.35);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.mic-wrap-waiting .mic-label {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.skip-btn {
+  font-size: 0.9rem;
+  padding: 0.45rem 1rem;
+}
+
+.fallback-area {
+  margin: 0.65rem 0 0.5rem;
+}
+
+.transcript {
+  margin-top: 1rem;
+}
+
+/* Enabled primary must stay teal, not muted grey */
+.btn.primary:not(:disabled) {
+  background: var(--teal);
+  color: #fff;
+  opacity: 1;
+}
+
+.btn.primary:disabled {
+  background: #9aabb3;
+  color: #fff;
+  opacity: 0.7;
+}
+
+.answer-notes {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.answer-notes li {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.answer-notes .note-q {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--teal);
+  font-weight: 650;
+}
+
+.answer-notes .note-body {
+  color: var(--ink);
+  font-size: 0.95rem;
+}

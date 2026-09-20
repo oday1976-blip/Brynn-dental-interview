@@ -1,6 +1,7 @@
 interface Props {
   listening: boolean;
   disabled?: boolean;
+  waiting?: boolean;
   onPressStart: () => void;
   onPressEnd: () => void;
   label?: string;
@@ -10,18 +11,33 @@ interface Props {
 export function MicButton({
   listening,
   disabled,
+  waiting,
   onPressStart,
   onPressEnd,
   label,
 }: Props) {
+  const classes = [
+    'mic-btn',
+    listening ? 'listening' : '',
+    waiting || (disabled && !listening) ? 'waiting' : '',
+  ]
+    .filter(Boolean)
+    .join(' ');
+
   return (
-    <div className="mic-wrap">
+    <div className={`mic-wrap ${waiting ? 'mic-wrap-waiting' : ''}`}>
       <button
         type="button"
-        className={`mic-btn ${listening ? 'listening' : ''}`}
+        className={classes}
         disabled={disabled}
         aria-pressed={listening}
-        aria-label={listening ? 'Stop listening and send answer' : 'Tap to talk'}
+        aria-label={
+          waiting
+            ? 'Wait for interviewer'
+            : listening
+              ? 'Stop listening and send answer'
+              : 'Tap to talk'
+        }
         onClick={() => {
           if (disabled) return;
           if (listening) onPressEnd();

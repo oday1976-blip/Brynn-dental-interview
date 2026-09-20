@@ -76,7 +76,11 @@ export function useInterview() {
     });
   }, []);
 
-  const submitAnswer = useCallback(async (answerText: string): Promise<string | null> => {
+  const submitAnswer = useCallback(
+    async (
+      answerText: string,
+      inputMode: 'voice' | 'text' = 'voice'
+    ): Promise<string | null> => {
     const trimmed = answerText.trim();
     if (!trimmed) return null;
 
@@ -85,10 +89,12 @@ export function useInterview() {
       // allow from awaiting
     }
 
+    const answerTurn = { role: 'brynn' as const, text: trimmed, inputMode };
+
     setState((prev) => ({
       ...prev,
       status: 'processing',
-      turns: [...prev.turns, { role: 'brynn', text: trimmed }],
+      turns: [...prev.turns, answerTurn],
     }));
 
     const currentQ = s.questions[s.questionIndex];
@@ -102,7 +108,7 @@ export function useInterview() {
             api,
             s.currentPrompt,
             trimmed,
-            [...s.turns, { role: 'brynn', text: trimmed }]
+            [...s.turns, answerTurn]
           );
         } catch {
           followUp = chooseFollowUp(currentQ, trimmed, s.followedUpForCurrent);

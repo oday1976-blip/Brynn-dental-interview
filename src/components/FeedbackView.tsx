@@ -43,9 +43,23 @@ export function FeedbackView({ feedback, onSpeakSummary, onRestart, speaking }: 
       </section>
 
       <section>
-        <h3>Content vs your story bank</h3>
+        <h3>Themes in your answers</h3>
         <p>{feedback.contentVsStoryBank}</p>
       </section>
+
+      {feedback.answerNotes.length > 0 && (
+        <section>
+          <h3>Answer-by-answer notes</h3>
+          <ul className="answer-notes">
+            {feedback.answerNotes.map((n, i) => (
+              <li key={i}>
+                <strong className="note-q">{n.question}</strong>
+                <span className="note-body">{n.note}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <section>
         <h3>Delivery tips</h3>
@@ -68,6 +82,9 @@ export function FeedbackView({ feedback, onSpeakSummary, onRestart, speaking }: 
       <p className="metrics">
         Answers: {feedback.metrics.answerCount} · Avg words:{' '}
         {feedback.metrics.avgWords} · Short answers: {feedback.metrics.shortAnswers}
+        {feedback.metrics.textAnswers > 0 || feedback.metrics.voiceAnswers > 0
+          ? ` · Typed: ${feedback.metrics.textAnswers} · Spoken: ${feedback.metrics.voiceAnswers}`
+          : ''}
       </p>
     </div>
   );

@@ -63,18 +63,23 @@ export default function App() {
   );
 
   const handleSubmit = useCallback(
-    async (text: string) => {
+    async (text: string, inputMode: 'voice' | 'text' = 'voice') => {
       if (!text.trim() || processing) return;
       setProcessing(true);
       speech.resetTranscript();
       try {
-        await interview.submitAnswer(text);
+        await interview.submitAnswer(text, inputMode);
       } finally {
         setProcessing(false);
       }
     },
     [interview, speech, processing]
   );
+
+  const handleSkipSpeaking = useCallback(() => {
+    speech.stopSpeaking();
+    interview.markAwaiting();
+  }, [speech, interview]);
 
   const handleRestart = useCallback(() => {
     endingRef.current = false;
@@ -114,7 +119,9 @@ export default function App() {
             speech.startListening();
           }}
           onFinishListen={() => speech.finishListening()}
-          onSubmitText={(t) => void handleSubmit(t)}
+          onSubmitText={(t) => void handleSubmit(t, 'text')}
+          onSubmitVoice={(t) => void handleSubmit(t, 'voice')}
+          onSkipSpeaking={handleSkipSpeaking}
           onEnd={() => void runEndSession()}
           processing={processing || state.status === 'processing'}
         />
